@@ -24,7 +24,14 @@
 		
 		
 	}
-	
+			$gender = "";
+				if(isset($_POST["gender"])) {
+				if(!empty($_POST["gender"])){
+			
+					//on olemas ja ei ole tühi
+					$gender = $_POST["gender"];
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,7 +67,29 @@
 			
 			<br><br>
 			
-			<input placeholder="Parool" name="signupPassword" type="password">
+			<label>Parool</label><br>
+			<input name="signupPassword" type="password">
+			
+			<br><br>
+			
+			<?php if ($gender == "male") { ?>
+				<input type="radio" name="gender" value="male" checked > Mees<br>
+			<?php } else { ?>
+				<input type="radio" name="gender" value="male"> Mees<br>
+			<?php } ?>
+			
+			<?php if ($gender == "female") { ?>
+				<input type="radio" name="gender" value="female" checked > Naine<br>
+			<?php } else { ?>
+				<input type="radio" name="gender" value="female"> Naine<br>
+			<?php } ?>
+			
+			<?php if ($gender == "other") { ?>
+				<input type="radio" name="gender" value="other" checked > Muu<br>
+			<?php } else { ?>
+				<input type="radio" name="gender" value="other"> Muu<br>
+			<?php } ?>
+			
 						
 			<br><br>
 			
